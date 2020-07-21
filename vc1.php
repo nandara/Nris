@@ -43,8 +43,7 @@ include "function1.php";
         $token = getStr('"access_token":"','"',$verif);
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("nevy","+] Your access token : ".$token."\n\n");
-        save("token.txt",$token);
-        echo color("nevy","\n===========(SUROBOYO LOSST REWEL PEGAT)===========");
+        save("token.txt",$token):
         echo "\n".color("nevy","!] GOFOOD1");
         echo "\n".color("yellow","!] Please wait");
         for($a=1;$a<=3;$a++){
