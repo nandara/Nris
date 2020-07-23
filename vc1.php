@@ -4,7 +4,7 @@ include "function1.php";
 // function change(){
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-        echo color("Blue","📲▶️ Nomor : ");
+        echo color("Blue"," Nomor : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
@@ -31,14 +31,14 @@ include "function1.php";
         $register = request("/v5/customers", null, $data);
         if(strpos($register, '"otp_token"')){
         $otptoken = getStr('"otp_token":"','"',$register);
-        echo color("green","📶▶️ Kode verifikasi sudah di kirim")."\n";
+        echo color("green","Kode verifikasi sudah di kirim")."\n";
         otp:
-        echo color("purple","💬▶️ Otp : ");
+        echo color("purple","Otp : ");
         $otp = trim(fgets(STDIN));
         $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
         if(strpos($verif, '"access_token"')){
-        echo color("green","✔️▶️ Berhasil Mendaftar\n");
+        echo color("green","Berhasil Mendaftar\n");
         $token = getStr('"access_token":"','"',$verif);
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("nevy","+] Your access token : ".$token."\n\n");
@@ -53,10 +53,10 @@ include "function1.php";
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2107"}');
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu sudah bisa dipakai')){
-        echo "\n".color("green","🔓▶️ Message: ".$message);
+        echo "\n".color("green","Message: ".$message);
         goto gocar;
         }else{
-        echo "\n".color("red","🔐▶️ Message: ".$message);
+        echo "\n".color("red","Message: ".$message);
 	      gocar:
         echo "\n".color("Blue","Vc2");
         echo "\n".color("yellow","Please Wait");
@@ -67,10 +67,10 @@ include "function1.php";
         $code1 = request1('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2107"}');
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu sudah bisa dipakai.')){
-        echo "\n".color("green","🔓▶️ Message: ".$message);
+        echo "\n".color("green","Message: ".$message);
         goto gofood;
         }else{
-        echo "\n".color("red","🔐▶️ Message: ".$message);
+        echo "\n".color("red","Message: ".$message);
         gofood:
         echo "\n".color("Blue","Vc3");
         echo "\n".color("yellow","Please Wait");
@@ -80,7 +80,7 @@ include "function1.php";
         }
         $code1 = request2('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2107"}');
         $message = fetch_value($code1,'"message":"','"');
-        echo "\n".color("Blue","🔓▶️ Message: ".$message);
+        echo "\n".color("Blue","Message: ".$message);
         echo "\n".color("nevy","Vc4");
         echo "\n".color("yellow","Please Wait");
         for($a=1;$a<=3;$a++){
@@ -90,7 +90,7 @@ include "function1.php";
         sleep(5);
         $boba09 = request1('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2107"}');
         $messageboba09 = fetch_value($boba09,'"message":"','"');
-        echo "\n".color("green","🔓▶️ Message: ".$messageboba09);
+        echo "\n".color("green","Message: ".$messageboba09);
         sleep(3);
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=13&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');
@@ -107,11 +107,11 @@ include "function1.php";
         $voucher11 = getStr1('"title":"','",',$cekvoucher,"11");
         $voucher12 = getStr1('"title":"','",',$cekvoucher,"12");
         $voucher13 = getStr1('"title":"','",',$cekvoucher,"13");
-        echo "\n".color("purple","🎫▶️ Total voucher ".$total." : ");
+        echo "\n".color("Blue","Total voucher ".$total." : ");
         echo "\n".color("blue","                     1. ".$voucher1);
         echo "\n".color("blue","                     2. ".$voucher2);
-        echo "\n".color("green","                    3. ".$voucher3);
-        echo "\n".color("green","                    4. ".$voucher4);
+        echo "\n".color("blue","                    3. ".$voucher3);
+        echo "\n".color("blue","                    4. ".$voucher4);
         echo "\n".color("nevy","                     5. ".$voucher5);
         echo "\n".color("nevy","                     6. ".$voucher6);
         echo "\n".color("red","                      7. ".$voucher7);
