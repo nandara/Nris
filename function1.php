@@ -5,11 +5,11 @@ $header[] = "User-Agent: okhttp/3.10.0";
 $header[] = "Accept: application/json";
 $header[] = "Accept-Language: id-ID";
 $header[] = "Content-Type: application/json; charset=UTF-8";
-$header[] = "X-AppVersion: 3.53.1";
+$header[] = "X-AppVersion: 3.46.1";
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: id_ID";
-$header[] = "X-Location: -5.1385".mt_rand(100,999).",119.418".mt_rand(1000,9999);
+$header[] = "X-Location: -8.67".mt_rand(1000,9999).",115.21".mt_rand(1000,9999);
 if ($pin):
 $header[] = "pin: $pin";
     endif;
@@ -51,7 +51,7 @@ $header[] = "User-Agent: okhttp/3.10.0";
 $header[] = "Accept: application/json";
 $header[] = "Accept-Language: id-ID";
 $header[] = "Content-Type: application/json; charset=UTF-8";
-$header[] = "X-AppVersion: 3.53.1";
+$header[] = "X-AppVersion: 3.46.1";
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: id_ID";
@@ -97,11 +97,11 @@ $header[] = "User-Agent: okhttp/3.10.0";
 $header[] = "Accept: application/json";
 $header[] = "Accept-Language: id-ID";
 $header[] = "Content-Type: application/json; charset=UTF-8";
-$header[] = "X-AppVersion: 3.53.1";
+$header[] = "X-AppVersion: 3.46.1";
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: id_ID";
-$header[] = "X-Location: -6.2277".mt_rand(100,999).",106.803".mt_rand(1000,9999);
+$header[] = "X-Location: -8.608".mt_rand(100,999).",116.12".mt_rand(1000,9999);
 if ($pin):
 $header[] = "pin: $pin";
     endif;
@@ -190,4 +190,3 @@ function fetch_value($str,$find_start,$find_end) {
 	$end    = strpos(substr($str,$start +$length),$find_end);
 	return trim(substr($str,$start +$length,$end));
 }
-?>
