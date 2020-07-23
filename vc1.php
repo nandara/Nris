@@ -31,7 +31,7 @@ include "function1.php";
         $register = request("/v5/customers", null, $data);
         if(strpos($register, '"otp_token"')){
         $otptoken = getStr('"otp_token":"','"',$register);
-        echo color("green","Kode verifikasi sudah di kirim")."\n";
+        echo color("green","Kode Otp Keur Otw")."\n";
         otp:
         echo color("purple","Otp : ");
         $otp = trim(fgets(STDIN));
@@ -44,8 +44,8 @@ include "function1.php";
         echo color("nevy","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
         echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬ Ngabusken Voucher ▬▬▬▬▬▬▬▬▬▬▬▬");
-        echo "\n".color("Blue","Vc1");
-        echo "\n".color("yellow","Please Wait.... Cigana Moal Benang Nu Ie");
+        echo "\n".color("nevy","Vc1");
+        echo "\n".color("yellow","Antosan Sakedap.... Cigana Moal Benang Nu Ie");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
         sleep(20);
@@ -58,8 +58,8 @@ include "function1.php";
         }else{
         echo "\n".color("red","Message: ".$message);
 	      gocar:
-        echo "\n".color("Blue","Vc2");
-        echo "\n".color("yellow","Please Wait");
+        echo "\n".color("nevy","Vc2");
+        echo "\n".color("yellow","Antosan Sakedap");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
         sleep(20);
@@ -72,8 +72,8 @@ include "function1.php";
         }else{
         echo "\n".color("red","Message: ".$message);
         gofood:
-        echo "\n".color("Blue","Vc3");
-        echo "\n".color("yellow","Please Wait");
+        echo "\n".color("nevy","Vc3");
+        echo "\n".color("yellow","Antosan Sakedap");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
         sleep(10);
@@ -82,7 +82,7 @@ include "function1.php";
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("Blue","Message: ".$message);
         echo "\n".color("nevy","Vc4");
-        echo "\n".color("yellow","Please Wait");
+        echo "\n".color("yellow","Antosan Sakedap");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
         sleep(1);
@@ -108,19 +108,19 @@ include "function1.php";
         $voucher12 = getStr1('"title":"','",',$cekvoucher,"12");
         $voucher13 = getStr1('"title":"','",',$cekvoucher,"13");
         echo "\n".color("Blue","Total voucher ".$total." : ");
-        echo "\n".color("blue","                     1. ".$voucher1);
-        echo "\n".color("blue","                     2. ".$voucher2);
-        echo "\n".color("blue","                    3. ".$voucher3);
-        echo "\n".color("blue","                    4. ".$voucher4);
+        echo "\n".color("nevy","                     1. ".$voucher1);
+        echo "\n".color("nevy","                     2. ".$voucher2);
+        echo "\n".color("nevy","                    3. ".$voucher3);
+        echo "\n".color("nevy","                    4. ".$voucher4);
         echo "\n".color("nevy","                     5. ".$voucher5);
         echo "\n".color("nevy","                     6. ".$voucher6);
-        echo "\n".color("red","                      7. ".$voucher7);
-        echo "\n".color("red","                      8. ".$voucher8);
-        echo "\n".color("purple","                   9. ".$voucher9);
-        echo "\n".color("purple","                   10. ".$voucher10);
+        echo "\n".color("nevy","                      7. ".$voucher7);
+        echo "\n".color("nevy","                      8. ".$voucher8);
+        echo "\n".color("nevy","                   9. ".$voucher9);
+        echo "\n".color("nevy","                   10. ".$voucher10);
       	echo "\n".color("nevy","                     11. ".$voucher11);
         echo "\n".color("nevy","                     12. ".$voucher12);
-        echo "\n".color("green","                    13. ".$voucher13);
+        echo "\n".color("nevy","                    13. ".$voucher13);
         echo"\n";
         $expired1 = getStr1('"expiry_date":"','"',$cekvoucher,'1');
         $expired2 = getStr1('"expiry_date":"','"',$cekvoucher,'2');
@@ -160,14 +160,14 @@ include "function1.php";
                                         $debug['text'] = $pesan;
                                         $debug['respon'] = json_decode($datas, true);
          setpin:
-         echo "\n".color("Blue","🔧▶️ Set Pin Sakalian Meh Tenang Lur!!!: y/n ");
+         echo "\n".color("Blue","Set Pin Sakalian Meh Tenang Lur!!!: y/n ");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
          echo color("nevy","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ Pin Maneh = 121212 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
          $data2 = '{"pin":"121212"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
-         echo "Otp pin: ";
+         echo "Otp Pin: ";
          $otpsetpin = trim(fgets(STDIN));
          $verifotpsetpin = request("/wallet/pin", $token, $data2, null, $otpsetpin, $uuid);
          echo $verifotpsetpin;
